@@ -6,7 +6,9 @@ const ArticleSchema = new Schema({
   subtitle: {type: String, minlength: 5},
   description: {type: String, minlength: 5, maxlength: 5000, required: true},
   owner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
-  category: {type: String, required: true, enum: ['sport', 'games', 'history']}
+  category: {type: String, required: true, enum: ['sport', 'games', 'history']},
+  createdAt: {type: Date, default: Date.now, require: true},
+  updatedAt: {type: Date, default: Date.now, require: true}
 });
 
-module.exports = mongoose.model('User', ArticleSchema);
+module.exports = mongoose.model('Article', ArticleSchema);

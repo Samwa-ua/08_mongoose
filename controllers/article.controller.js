@@ -1,5 +1,8 @@
+const Article = require('../models/article');
+
 async function getArticle(req, res) {
-  console.log(req);
+  const article = await Article.find();
+  return res.json(article);
 }
 
 module.exports = {getArticle};
