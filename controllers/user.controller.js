@@ -1,3 +1,4 @@
+const Article = require('../models/article');
 const User = require('../models/user');
 
 async function getAll(req, res) {
@@ -44,8 +45,9 @@ async function editUser(req, res) {
 }
 async function deleteUser(req, res) {
   try {
-    const user = await User.deleteOne({_id: req.params.userId});
-    return res.json(['User was successfully deleted', user]);
+    const {userId} = req.params;
+    await Promise.all([User.deleteOne({_id: userId}), Article.deleteMany({owner: userId})]);
+    return res.json('User was successfully deleted');
   } catch (e) {
     console.log(e.message);
     res.send(e.message);
