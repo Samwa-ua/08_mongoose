@@ -62,9 +62,9 @@ async function filter(req, res) {
     }
     const articles = await Article.find(article).populate('owner');
     return res.json(articles);
-  } catch (err) {
-    console.log(err);
-    next(err);
+  } catch (e) {
+    console.log(e.messsage);
+    res.send(e.messsage);
   }
 }
 
