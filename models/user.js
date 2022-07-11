@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const UserShema = new Schema({
   firstName: {type: String, required: true, minlength: 4, maxlength: 50},
-  lastName: {type: String, required: true, minlength: 4, maxlength: 60},
+  lastName: {type: String, required: true, minlength: 3, maxlength: 60},
   roles: [
     {type: String, role: 'admin'},
     {type: String, role: 'writer'},

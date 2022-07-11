@@ -8,7 +8,7 @@ const app = express();
 
 const mongoose = require('mongoose');
 const dev_db_url =
-  'mongodb+srv://admin_tm:A16Dd6ViwGntkI4p@bootcamp.zjbmete.mongodb.net/tc_mongoose?retryWrites=true&w=majority';
+  'mongodb+srv://admin_tm:A16Dd6ViwGntkI4p@bootcamp.zjbmete.mongodb.net/tc2?retryWrites=true&w=majority';
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 const dbOptions = {useUnifiedTopology: true, useNewUrlParser: true};
